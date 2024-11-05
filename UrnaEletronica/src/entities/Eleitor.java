@@ -16,6 +16,31 @@ public class Eleitor extends Pessoa {
         this.tituloDeEleitor = tituloDeEleitor;
     }
 
+    @Override
+    public void votar() {
+//        super.votar();
+        System.out.println("Sou eleitor e votei");
+    }
+    
+    
+    
+    public static void cadastrarEleitor(String tituloDeEleitor, String nome, int idade){
+        Eleitor eleitor = new Eleitor(tituloDeEleitor, nome, idade);
+        listaDeEleitores.add(eleitor);
+    }
+    
+    public boolean verificarEleitor(String tituloDeEleitor){
+        if(!listaDeEleitores.isEmpty()){
+            for(Eleitor e: listaDeEleitores){
+                if(e.getTituloDeEleitor().equalsIgnoreCase(tituloDeEleitor)){
+                    return true;
+                }
+            }
+        }
+        return false;        
+    }
+
+    
     public String getTituloDeEleitor() {
         return tituloDeEleitor;
     }

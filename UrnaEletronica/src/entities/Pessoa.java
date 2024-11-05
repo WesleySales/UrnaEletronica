@@ -8,12 +8,20 @@ public class Pessoa {
     
     protected String nome;
     protected int idade;
-
+    
     public Pessoa(String nome, int idade) {
         this.nome = nome;
         this.idade = idade;
     }
 
+    public void cadastrarPessoa(String nome, int idade){
+        Pessoa pessoa = new Pessoa(nome, idade);
+    }
+    
+    public void votar(){
+        System.out.println("Votei");
+    }
+    
     public String getNome() {
         return nome;
     }
