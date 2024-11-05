@@ -6,11 +6,19 @@ import java.util.List;
 public class Candidato extends Pessoa{
     private String numeroDoCandidato;
     protected static List<Candidato> listaDeCandidatos = new ArrayList<>();
+    private String partido;
 
     public Candidato(String numeroDoCandidato, String nome, int idade) {
         super(nome, idade);
         this.numeroDoCandidato = numeroDoCandidato;
     }
+
+    @Override
+    public void votar() {
+        System.out.println("Sou candidato e votei");
+    }
+    
+    
 
     public String getNome() {
         return nome;
